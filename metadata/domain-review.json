@@ -1,0 +1,73 @@
+{
+  "repo": "ember-move-uci-mark",
+  "language": "Elixir",
+  "category": "Chess and game engines",
+  "goal": "Build an Elixir toolkit that studies uci behavior through log and snapshot fixtures, with replay consistency checks and local-only command execution.",
+  "review_model": {
+    "terms": [
+      "position pressure",
+      "move ordering",
+      "search width",
+      "endgame risk"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "position pressure",
+      "signal": 64,
+      "slack": 53,
+      "drag": 17,
+      "confidence": 87,
+      "score": 217,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "move ordering",
+      "signal": 66,
+      "slack": 46,
+      "drag": 17,
+      "confidence": 80,
+      "score": 207,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "search width",
+      "signal": 64,
+      "slack": 54,
+      "drag": 16,
+      "confidence": 53,
+      "score": 187,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "endgame risk",
+      "signal": 87,
+      "slack": 26,
+      "drag": 14,
+      "confidence": 47,
+      "score": 205,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "position pressure",
+      "signal": 61,
+      "slack": 37,
+      "drag": 26,
+      "confidence": 58,
+      "score": 139,
+      "lane": "watch"
+    }
+  ]
+}
